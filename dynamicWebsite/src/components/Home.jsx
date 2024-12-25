@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Help() {
+function Home() {
     return (
         <div>
-            Help me!!
+            
         </div>
     );
 }
 
-export default Help;
+export default Home;
