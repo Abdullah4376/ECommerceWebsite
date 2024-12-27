@@ -1,33 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useNavigate } from 'react-router'
 import './App.css'
+import Logo from './components/Logo.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const navigate = useNavigate();
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    {/* Navbar Starts Here */}
+      <header className='font-poppins bg-slate-900 text-white sticky top-0 z-50 mx-auto flex w-full items-center justify-between p-8'>
+        <div className='flex items-center space-x-2'>
+          <Logo />
+          <p className='text-3xl font-medium'>E-Coma</p>
+        </div>
+        
+        <ul className='flex justify-between items-center space-x-8'>
+          <li className='text-2xl'>Home</li>
+          <li className='text-2xl'>Login</li>
+          <li className='text-2xl'>Signup</li>
+        </ul>
+
+        <button onClick={() => navigate('/cart')} className='material-symbols-outlined' style={{ fontSize: '35px' }}>shopping_cart</button>
+        
+      </header>
+      {/* Navbar Ends Here */}
     </>
   )
 }
